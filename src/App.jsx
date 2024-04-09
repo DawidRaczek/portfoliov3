@@ -15,6 +15,7 @@ const Scrollbar = styled(motion.div)`
   height: 10px;
   background: #FB8500;
   transform-origin: 0%;
+  z-index: 999;
 `;
 
 function App() {
