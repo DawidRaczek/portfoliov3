@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
+import { useInView } from 'react-intersection-observer';
+
 
 const AboutWrapper = styled.div`
     width: 100%;
@@ -32,15 +34,20 @@ const P3Text = styled.div`
 `
 
 const About = () => {
+    const { ref, inView } = useInView({
+        threshold: 0.5,
+    });
+
     return (
-        <AboutWrapper>
+        <AboutWrapper ref={ref}>
             <TextWrapper>
             <motion.div
+                ref={ref}
                 initial={{ opacity: 0, scale: 0.5 }}
-                animate={{ opacity: 1, scale: 1 }}
+                animate={inView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.5 }}
                 transition={{
                   duration: 0.8,
-                  delay: 0.8,
+                  delay: 0.5,
                   ease: [0, 0.71, 0.2, 1.01]
                 }}
                 >
@@ -50,11 +57,12 @@ const About = () => {
                     </P1Text>
                 </motion.div>
                 <motion.div
+                ref={ref}
                 initial={{ opacity: 0, scale: 0.5 }}
-                animate={{ opacity: 1, scale: 1 }}
+                animate={inView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.5 }}
                 transition={{
                   duration: 0.8,
-                  delay: 1.1,
+                  delay: 1.0,
                   ease: [0, 0.71, 0.2, 1.01]
                 }}
                 >
@@ -65,11 +73,12 @@ const About = () => {
                     </P2Text>
                 </motion.div>
                 <motion.div
+                ref={ref}
                 initial={{ opacity: 0, scale: 0.5 }}
-                animate={{ opacity: 1, scale: 1 }}
+                animate={inView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.5 }}
                 transition={{
                   duration: 0.8,
-                  delay: 1.4,
+                  delay: 1.5,
                   ease: [0, 0.71, 0.2, 1.01]
                 }}
                 >
