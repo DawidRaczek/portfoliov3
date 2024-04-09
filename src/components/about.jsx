@@ -2,9 +2,12 @@ import React from "react";
 import styled from "styled-components";
 
 const AboutWrapper = styled.div`
-    width: 100vw;
-    height: 100px;
-    background-color: #2A1F2D;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #219EBC;
 `;
 
 

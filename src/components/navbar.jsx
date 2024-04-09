@@ -9,7 +9,7 @@ const Header = styled.div`
     justify-content: space-around;
     align-items: center;
     padding: 10px;
-    background-color: white;
+    background-color: #FB8500;
     color: black;
     box-shadow: 0 -6px 10px 5px rgba(0, 0, 0, 0.5);
 `;
@@ -32,8 +32,14 @@ const Name = styled.h1`
     margin: 0;
     font-size: 18px;
     font-family: 'Open Sans', sans-serif;
-    cursor: pointer;
-    color: rgba(75, 75, 75, 1);
+    color: black;
+`;
+
+const BlackButton = styled(Button)`
+    && {
+        color: black;
+        font-weight: bold;
+    }
 `;
 
 const Navbar = () => {
@@ -48,10 +54,10 @@ const Navbar = () => {
           <Name>Dawid Rak</Name>
         </HeaderLeft>
         <HeaderRight>
-          <Button>Home</Button>
-          <Button>Get my CV</Button>
-          <Button>Projects</Button>
-          <Button>Contact</Button>
+          <BlackButton>About</BlackButton>
+          <BlackButton>Projects</BlackButton>
+          <BlackButton>Contact</BlackButton>
+          <BlackButton>Get my CV</BlackButton>
         </HeaderRight>
       </Header>
     </motion.div>
