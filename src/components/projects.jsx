@@ -2,7 +2,10 @@ import React from "react";
 import styled from "styled-components";
 import { motion, useScroll } from "framer-motion";
 import { useRef } from "react";
+import { useState } from "react";
+import Modal from '@mui/material/Modal';
 import '../style/projectsScroll.css';
+import '../style/presence.css';
 
 const ProjectsWrapper = styled.div`
     width: 100%;
@@ -13,6 +16,28 @@ const ProjectsWrapper = styled.div`
     background-color: #8ECAE6;
     position: relative;
 `;
+
+const Layout = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const handleOpen = () => setIsOpen(true);
+  const handleClose = () => setIsOpen(false);
+
+  return (
+    <>
+      <li onClick={handleOpen}></li>
+      <Modal
+      open={isOpen}
+      onClose={handleClose}
+      >
+        <div>
+          hello world
+        </div>
+      </Modal>
+    </>
+  )
+
+};
+
 
 const Projects = () => {
 
@@ -33,7 +58,7 @@ const Projects = () => {
         />
         </svg>
       <ul ref={ref}>
-        <li></li>
+        <Layout/>
         <li></li>
         <li></li>
         <li></li>

@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
+import '../style/fonts.css';
 
 const FrontWrapper = styled.div`
     width: 100%;
@@ -22,16 +23,8 @@ const TextWrapper = styled.div`
 
 const H1Text = styled.h1 `
     color: #FB8500;
-    font-size: 50px;
-`
-const P1Text = styled.div`
-    color: #FFB703;
-`
-const P2Text = styled.div`
-    color: #FFB703;
-`
-const P3Text = styled.div`
-    color: #FFB703;
+    font-size: 75px;
+    font-family: "Shadows Into Light", cursive;
 `
 
 const Homepage = () => {

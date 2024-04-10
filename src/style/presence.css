@@ -1,0 +1,14 @@
+.parent {
+  background: white;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.parent[data-isOpen="true"] {
+    position: absolute;
+    width: 400px;
+    height: 200px;
+}
